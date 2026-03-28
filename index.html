@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN | Street Style. African Soul.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #0a0a0a;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+            z-index: 1000;
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo span {
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -15px;
+            background: #FFD700;
+            color: black;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Hero */
+        /* Hero Section with Fashion Image */
+.hero {
+    min-height: 90vh;
+    background: url('https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero h1 span {
+    color: #FFD700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #FFD700;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #FFD700;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #FFD700;
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-outline {
+        width: 200px;
+        text-align: center;
+    }
+}
+        
+        
+        /* Products */
+        .products {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title span {
+            color: #FFD700;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: #111;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 350px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image i {
+            font-size: 5rem;
+            color: #FFD700;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image i {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            background: #111;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: #FFD700;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        
+        .add-to-cart {
+            background: #FFD700;
+            color: black;
+            border: none;
+            padding: 0.8rem;
+            width: 100%;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background: white;
+        }
+        
+        /* Features */
+        .features {
+            padding: 5rem 0;
+            background: #111;
+            border-top: 1px solid rgba(255,215,0,0.1);
+            border-bottom: 1px solid rgba(255,215,0,0.1);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .feature i {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #050505;
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0a0a0a;
+                flex-direction: column;
+                padding: 2rem;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .products-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">URBAN<span>.</span></a>
+            <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#products">Shop</a>
+                <a href="#features">Features</a>
+                <a href="#" class="cart-icon">🛒 <span class="cart-count" id="cartCount">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <h1>Street Style.<br><span>African Soul.</span></h1>
+            <p>Discover the latest urban fashion trends inspired by Kenyan culture. Bold. Authentic. You.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary">Shop Now →</a>
+                <a href="#features" class="btn-outline">Explore</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Latest <span>Drops</span></h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-hoodie"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">African Print Hoodie</h3>
+                        <p>Premium cotton, bold patterns</p>
+                        <div class="product-price">KES 3,500</div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-vest"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Urban Denim Jacket</h3>
+                        <p>Classic fit, modern edge</p>
+                        <div class="product-price">KES 4,500</div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-shirt"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kente Print Shirt</h3>
+                        <p>Traditional meets modern</p>
+                        <div class="product-price">KES 2,800</div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Free Delivery</h3>
+                    <p>Nairobi only</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-undo"></i>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>M-PESA Accepted</h3>
+                    <p>Pay securely</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <h3>Quality Guarantee</h3>
+                    <p>100% authentic</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 URBAN. Street Style. African Soul.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+        
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cartCount').textContent = cartCount;
+            alert('Added to cart!');
+        }
+        
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
